@@ -22,3 +22,4 @@ On peut également, à l'aide d'une annonce bienici, rajouter un bien dans la ba
 Exercice 2 - Review
 
 Cet exercice consiste en une refonte de code, sur une classe Tank. Le script Python contenu dans le repo est ma proposition de refonte de code, pour qu'il soit plus lisible et fonctionnel que celui proposé de base.
+Le fichier Tank_reference.py est le fichier tel quel, le fichier Tank.py est le fichier qui comprend mes modifications.
