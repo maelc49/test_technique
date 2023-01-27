@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Annonce</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+  </head>
+  <body>
+    <main>
+    	<div class="container">
+    		<h2>Rechercher les prix moyens</h2>
+    		<form method="post">
+            {% csrf_token %}
+                {{ann_form.as_p}}
+                <button type="submit">Rechercher</button>
+          	</form>
+    	</div>
+    	{%if result_moy is not None%}
+    		<div>
+    			<p> Le prix moyen est {{result_moy}} euros </p>
+    			<p> Le quartile 10% est {{quartile10}} euros </p>
+    			<p> Le quartile 90% est {{quartile90}} euros </p>
+    		</div>
+    	{%endif %}
+    	{%if err is not None%}
+    		<div>
+    			<p> Aucun résultat correspondant à cette recherche </p>
+    		</div>
+    	{%endif%}
+
+    	<div>
+    		<h2> Ajouter une annonce à la base de données </h2>
+    		<form method="post">
+            {% csrf_token %}
+                {{add_form.as_p}}
+                <button type="submit">Ajouter annonce</button>
+          	</form>
+    	</div>
+    	{%if message is not None%}
+    		<div>
+    			<p> {{message}} </p>
+    		</div>
+    	{%endif%}
+    </main>
+  </body>
+</html>
